@@ -11,7 +11,7 @@
 	<h1>Index Page</h1>
 	<a href="./member/memberLogin.do">Member Login</a>
 	
-	<form action="./member/memberLogin.do" method="get">
+	<form action="./sub/loginTest.jsp" method="get">
 	
 		<input type="text" name="id">
 		<input type="password" name="pw">
@@ -19,6 +19,9 @@
 		<button>Login</button>
 	
 	</form>
+	
+	<h3><a href="./sub/test.jsp?name=iu&age=20">Go Test</a></h3>
+	
 	
 </body>
 </html>
