@@ -23,6 +23,7 @@ public class MemberService {
 		System.out.println(method);
 		
 		actionFoward.setPath("../WEB-INF/member/memberJoin.jsp");
+		actionFoward.setCheck(true);
 		
 		if(method.toUpperCase().equals("POST")) {
 			MemberDTO memberDTO = new MemberDTO();
@@ -34,7 +35,8 @@ public class MemberService {
 					
 			int result = memberDAO.memberJoin(memberDTO);
 			
-			actionFoward.setPath("../index.jsp");
+			actionFoward.setPath("../index.do");
+			actionFoward.setCheck(false);
 			
 		}
 		
@@ -50,6 +52,7 @@ public class MemberService {
 		String method = request.getMethod();
 		
 		actionFoward.setPath("../WEB-INF/member/memberLogin.jsp");
+		actionFoward.setCheck(true);
 		
 		if(method.toUpperCase().equals("POST")) {
 			MemberDTO memberDTO = new MemberDTO();
@@ -58,7 +61,16 @@ public class MemberService {
 			
 			memberDTO = memberDAO.login(memberDTO);
 			
-			actionFoward.setPath("../index.jsp");
+			if(memberDTO != null) {
+				
+				actionFoward.setPath("../index.do");
+				actionFoward.setCheck(false);
+				
+			} else {
+				System.out.println("로그인 실패!");
+			}
+			
+			
 
 		}
 		

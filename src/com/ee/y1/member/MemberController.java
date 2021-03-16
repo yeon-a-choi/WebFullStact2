@@ -101,6 +101,7 @@ public class MemberController extends HttpServlet {
 		
 		String pathInfo="";
 		ActionFoward actionFoward = null;
+
 		
 		if(result.equals("memberLogin.do")) {
 			
@@ -121,17 +122,29 @@ public class MemberController extends HttpServlet {
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
-			
+			}		
 			
 			
 		} else {
 			System.out.println("그 외 다른 처리");
 		}
 		
-		//forward
-		RequestDispatcher view = request.getRequestDispatcher(actionFoward.getPath());
-		view.forward(request, response);
+		
+		if(actionFoward.isCheck()) {
+			
+			//forward
+			RequestDispatcher view = request.getRequestDispatcher(actionFoward.getPath());
+			view.forward(request, response);
+			
+		} else {
+			
+			//redirect
+			response.sendRedirect(actionFoward.getPath());
+			
+		}
+		
+		
+		
 		
 		
 	}
