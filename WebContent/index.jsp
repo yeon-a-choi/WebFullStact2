@@ -32,7 +32,7 @@
 			        </ul>
 	        
 	      		</li>
-	      		<li><a href="#">Page 2</a></li>
+	      		<li><a href="./bankbook/bankbookList.do">BankBook</a></li>
 	    	</ul>
 	    	
 	    	<ul class="nav navbar-nav navbar-right">

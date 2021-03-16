@@ -30,6 +30,21 @@
   </servlet-mapping>
   
   
+     <servlet>
+  
+  	<servlet-name>bankbook</servlet-name>
+  	<servlet-class>com.ee.y1.bankbook.BankBookController</servlet-class>
+  
+  </servlet>
+  
+  <servlet-mapping>
+  
+  	<servlet-name>bankbook</servlet-name>
+  	<url-pattern>/bankbook/*</url-pattern>
+  
+  </servlet-mapping>
+  
+  
   
   
 </web-app>

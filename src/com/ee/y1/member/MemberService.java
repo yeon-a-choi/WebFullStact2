@@ -8,8 +8,6 @@ public class MemberService {
 	
 	private MemberDAO memberDAO;
 	
-	
-	
 	public void setMemberDAO(MemberDAO memberDAO) {
 		this.memberDAO = memberDAO;
 	}
@@ -67,9 +65,10 @@ public class MemberService {
 				actionFoward.setCheck(false);
 				
 			} else {
+				actionFoward.setPath("../member/memberLogin.do");
+				actionFoward.setCheck(false);
 				System.out.println("로그인 실패!");
 			}
-			
 			
 
 		}
