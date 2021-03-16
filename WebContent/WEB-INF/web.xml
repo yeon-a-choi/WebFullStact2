@@ -15,7 +15,7 @@
   </servlet-mapping> -->
   
   
-    <servlet>
+   <servlet>
   
   	<servlet-name>member</servlet-name>
   	<servlet-class>com.ee.y1.member.MemberController</servlet-class>
@@ -25,9 +25,11 @@
   <servlet-mapping>
   
   	<servlet-name>member</servlet-name>
-  	<url-pattern>/member/memberLogin.do</url-pattern>
+  	<url-pattern>/member/*</url-pattern>
   
   </servlet-mapping>
+  
+  
   
   
 </web-app>

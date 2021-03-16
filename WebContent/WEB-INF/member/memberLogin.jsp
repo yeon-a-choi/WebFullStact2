@@ -13,6 +13,7 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+
 </head>
 <body>
 
@@ -36,13 +37,39 @@
 	    	</ul>
 	    	
 	    	<ul class="nav navbar-nav navbar-right">
-			    <li><a href="./member/memberJoin.do"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-			    <li><a href="./member/memberLogin.do"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			    <li><a href="./memberJoin.do"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+			    <li><a href="./memberLogin.do"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 	   		</ul>
    		
   		</div>
 	</nav>
-  
+
+	<h1>Member Login Page</h1>
 	
+	<form class="form-horizontal" action="./memberLogin.do" method="post">
+	
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="id">ID:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="id" placeholder="Enter id" name="id">
+      </div>
+    </div>
+    
+    
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pw">Password:</label>
+      <div class="col-sm-10">          
+        <input type="password" class="form-control" id="pw" placeholder="Enter password" name="pw">
+      </div>
+    </div>
+
+    
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+    </div>
+  </form>
+
 </body>
 </html>

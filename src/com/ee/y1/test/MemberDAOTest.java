@@ -11,12 +11,19 @@ public class MemberDAOTest {
 		MemberDAO memberDAO = new MemberDAO();
 		MemberDTO memberDTO = new MemberDTO();
 		
-		memberDTO.setId("iu");
-		memberDTO.setPw("pw1");
+		memberDTO.setId("id3");
+		memberDTO.setPw("pw3");
+		memberDTO.setName("yoona");
+		memberDTO.setPhone("010222222222");
+		memberDTO.setEmail("yoona@naver.com");
 		
 		
 		try {
-			memberDTO = memberDAO.login(memberDTO);
+			
+			
+//			memberDTO = memberDAO.login(memberDTO);
+			
+			int result = memberDAO.memberJoin(memberDTO);
 			
 //			if(memberDTO != null) {
 //				System.out.println("Succeed!");
@@ -24,7 +31,7 @@ public class MemberDAOTest {
 //				System.out.println("failed!");
 //			}
 			
-			System.out.println(memberDTO != null);
+			System.out.println(result != 0);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
