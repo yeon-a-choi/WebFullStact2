@@ -106,7 +106,8 @@ public class BankBookDAO {
 		
 		public int setWrite(BankBookDTO bankBookDTO) throws Exception{
 			
-			bankBookDTO = new BankBookDTO();
+			//bankBookDTO = new BankBookDTO(); 이렇게 다시 선언하면
+			// 가져온 값에 null값을 덮어 씌워버림...
 			
 			//1. 로그인 정보 
 			String user="user02";
