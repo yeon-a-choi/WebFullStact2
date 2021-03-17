@@ -41,7 +41,7 @@
 			        </ul>
 	        
 	      		</li>
-	      		<li><a href="./bankbook/bankbookList.do">BankBook</a></li>
+	      		<li><a href="./bankbookList.do">BankBook</a></li>
 	    	</ul>
 	    	
 	    	<ul class="nav navbar-nav navbar-right">
@@ -69,7 +69,7 @@
 				<tbody>
 				<% for(int i=0;i<ar.size(); i++) { %>				
 					<tr>					
-						<td><a href="./bankbookSelect.do?bookNumber=<%=ar.get(i).getBookNumber() %>"><%=ar.get(i).getBookName() %></td>
+						<td><a href="./bankbookSelect.do?bookNumber=<%=ar.get(i).getBookNumber() %>"><%=ar.get(i).getBookName() %></a></td>
 						<td><%=ar.get(i).getBookRate() %></td>
 						<td><%=ar.get(i).getBookSale() %></td>					
 					</tr>
@@ -77,6 +77,8 @@
 				</tbody>
 						
 			</table>
+			
+			<a href="./bankbookWrite.do" class="btn btn-danger">WRITE</a>
 			
 		</div>
 	</div>

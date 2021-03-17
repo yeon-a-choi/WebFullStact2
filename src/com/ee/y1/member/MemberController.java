@@ -38,45 +38,7 @@ public class MemberController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		String id = request.getParameter("id");
-//		String pw = request.getParameter("pw");
-//		
-//		System.out.println("id : "+id);
-//		System.out.println("pw : "+pw);
-//		
-//		
-//		MemberDAO memberDAO = new MemberDAO();
-//		MemberDTO memberDTO = new MemberDTO();
-//		memberDTO.setId(id);
-//		memberDTO.setPw(pw);
-//		
-//		String result = " ";
-//		
-//		try {
-//			memberDTO = memberDAO.login(memberDTO);
-//		
-//			if(memberDTO != null) {
-//				result = "로그인 성공";
-//			} else {
-//				result = "로그인 실패";
-//			}
-//			
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		
-//		//attribute
-//		request.setAttribute("r", result);
-//		
-//		
-//		//attribute에 로그인한 memberDTO
-//		request.setAttribute("dto", memberDTO);
-//		
-//		//forward
-//		RequestDispatcher view = request.getRequestDispatcher("./memberResult.jsp");
-//		view.forward(request, response);
-		
+	
 		System.out.println("Member Controller!!");
 		
 		String path = request.getServletPath();
@@ -158,3 +120,45 @@ public class MemberController extends HttpServlet {
 	}
 
 }
+
+
+
+//String id = request.getParameter("id");
+//String pw = request.getParameter("pw");
+//
+//System.out.println("id : "+id);
+//System.out.println("pw : "+pw);
+//
+//
+//MemberDAO memberDAO = new MemberDAO();
+//MemberDTO memberDTO = new MemberDTO();
+//memberDTO.setId(id);
+//memberDTO.setPw(pw);
+//
+//String result = " ";
+//
+//try {
+//	memberDTO = memberDAO.login(memberDTO);
+//
+//	if(memberDTO != null) {
+//		result = "로그인 성공";
+//	} else {
+//		result = "로그인 실패";
+//	}
+//	
+//} catch (Exception e) {
+//	// TODO Auto-generated catch block
+//	e.printStackTrace();
+//}
+//
+////attribute
+//request.setAttribute("r", result);
+//
+//
+////attribute에 로그인한 memberDTO
+//request.setAttribute("dto", memberDTO);
+//
+////forward
+//RequestDispatcher view = request.getRequestDispatcher("./memberResult.jsp");
+//view.forward(request, response);
+

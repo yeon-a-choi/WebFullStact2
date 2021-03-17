@@ -5,16 +5,17 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import com.ee.y1.member.MemberDAO;
+import com.ee.y1.member.MemberDTO;
 import com.ee.y1.util.ActionFoward;
 
 public class BankBookService {
 
 private BankBookDAO bankBookDAO;
 	
+
 	public void setBankBookDAO(BankBookDAO bankBookDAO) {
 		this.bankBookDAO = bankBookDAO;
 	}
-
 
 
 	//getList dao의 getList 호출 
@@ -33,6 +34,7 @@ private BankBookDAO bankBookDAO;
 		return actionFoward;
 	}
 	
+	
 	public ActionFoward getSelect(HttpServletRequest request)throws Exception{
 		
 		ActionFoward actionFoward = new ActionFoward();
@@ -48,6 +50,36 @@ private BankBookDAO bankBookDAO;
 
 		
 		return actionFoward;
+	}
+	
+	
+	
+	public ActionFoward setWrite(HttpServletRequest request) throws Exception{
+		
+		ActionFoward actionFoward = new ActionFoward();
+		String method = request.getMethod();
+		System.out.println(method);
+		
+		actionFoward.setPath("../WEB-INF/bankbook/bankbookWrite.jsp");	
+		actionFoward.setCheck(true);
+		
+		if(method.toUpperCase().equals("POST")) {
+			
+			BankBookDTO bankBookDTO = new BankBookDTO();
+			bankBookDTO.setBookNumber(Integer.parseInt(request.getParameter("bookNumber")));
+			bankBookDTO.setBookName(request.getParameter("bookName"));
+			bankBookDTO.setBookRate(Long.parseLong(request.getParameter("bookRate")));
+			bankBookDTO.setBookSale(request.getParameter("bookSale"));
+			
+			int result = bankBookDAO.setWrite(bankBookDTO);
+			
+			actionFoward.setPath("../index.do");
+			actionFoward.setCheck(false);
+			
+		}
+		
+		return actionFoward;
+		
 	}
 
 

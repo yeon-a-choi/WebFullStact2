@@ -10,9 +10,10 @@ public class BankBookDAOTest {
 	public static void main(String[] args) {
 		BankBookDAO bankBookDAO = new BankBookDAO();
 		BankBookDTO bankBookDTO = new BankBookDTO();
+		
 		try {
-			bankBookDTO = bankBookDAO.getSelect(1L);
-			System.out.println(bankBookDTO != null);
+			int result = bankBookDAO.setWrite(bankBookDTO);
+			System.out.println(result != 0);
 			
 			
 		} catch (Exception e) {

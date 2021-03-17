@@ -103,5 +103,48 @@ public class BankBookDAO {
 			return bankBookDTO;
 		}
 	
+		
+		public int setWrite(BankBookDTO bankBookDTO) throws Exception{
+			
+			bankBookDTO = new BankBookDTO();
+			
+			//1. 로그인 정보 
+			String user="user02";
+			String password="user02";
+			String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+			String driver = "oracle.jdbc.driver.OracleDriver";
+			
+			//2. 클래스 로딩
+			Class.forName(driver);
+			
+			//3. 로그인 Connection
+			Connection con = DriverManager.getConnection(url, user, password);
+			
+			// 4. sql 문 작성
+			String sql ="insert into bankbook values(bank_seq.nextval, ?, ?, ?)";
+			
+			//5. 미리 전송
+			PreparedStatement st = con.prepareStatement(sql);
+			
+			//6. ?처리
+			st.setString(1, bankBookDTO.getBookName());
+			st.setDouble(2,bankBookDTO.getBookRate());
+			st.setString(3, bankBookDTO.getBookSale());
+					
+			// 7. 전송 후 처리
+			
+			//ResultSet rs = st.executeQuery();
+			int result = st.executeUpdate();
+
+			
+			//8. 연결 해제
+			//rs.close();
+			st.close();
+			con.close();
+			
+			//return rs;
+			return result;
+			
+		}
 
 }
