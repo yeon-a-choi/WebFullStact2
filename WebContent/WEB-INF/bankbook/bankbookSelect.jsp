@@ -1,12 +1,11 @@
 <%@page import="com.ee.y1.bankbook.BankBookDTO" %>
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
 
 <%
-	List<BankBookDTO> ar = (List<BankBookDTO>)request.getAttribute("list");
-%>    
+	BankBookDTO bankbookDTO = (BankBookDTO)request.getAttribute("select");
+%>   
 
 <!DOCTYPE html>
 <html>
@@ -41,7 +40,7 @@
 			        </ul>
 	        
 	      		</li>
-	      		<li><a href="./bankbook/bankbookList.do">BankBook</a></li>
+	      		<li><a href="./bankbookList.do">BankBook</a></li>
 	    	</ul>
 	    	
 	    	<ul class="nav navbar-nav navbar-right">
@@ -55,7 +54,24 @@
 	<div class = "container">
 		<div class="row">
 		
-			<h1>BankBook List</h1>
+			<h1>BankBook Select</h1>
+			
+<!-- 			<form class="form-horizontal" action="./bankbookSelect.do">
+	
+			  <div class="form-group">
+			    <label class="control-label col-sm-2" for="bookNumber">BookNumber:</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" id="bookNumber" placeholder="Enter bookNumber" name="bookNumber">
+			    </div>
+			  </div>
+			  
+			  <div class="form-group">        
+			      <div class="col-sm-offset-2 col-sm-10">
+			        <button type="submit" class="btn btn-default">Search</button>
+			      </div>
+			  </div>
+			  
+			 </form> -->
 			
 			<table class= "table table-hover">
 				<thead>				
@@ -66,14 +82,12 @@
 					</tr>				
 				</thead>
 				
-				<tbody>
-				<% for(int i=0;i<ar.size(); i++) { %>				
+				<tbody>				
 					<tr>					
-						<td><a href="./bankbookSelect.do?bookNumber=<%=ar.get(i).getBookNumber() %>"><%=ar.get(i).getBookName() %></td>
-						<td><%=ar.get(i).getBookRate() %></td>
-						<td><%=ar.get(i).getBookSale() %></td>					
+						<td><%=bankbookDTO.getBookName() %></td>
+						<td><%=bankbookDTO.getBookRate() %></td>
+						<td><%=bankbookDTO.getBookSale() %></td>					
 					</tr>
-				<%} %>
 				</tbody>
 						
 			</table>

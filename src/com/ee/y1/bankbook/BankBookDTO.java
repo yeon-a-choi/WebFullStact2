@@ -2,36 +2,41 @@ package com.ee.y1.bankbook;
 
 public class BankBookDTO {
 	
-	private String booknum;
-	private String bookname;
-	private double bookrate;
-	private boolean booksale;
+	private long bookNumber;
+	private String bookName;
+	private double bookRate;
+	private String bookSale;
+	
+	public long getBookNumber() {
+		return bookNumber;
+	}
+	public void setBookNumber(long bookNumber) {
+		this.bookNumber = bookNumber;
+	}
+	public String getBookName() {
+		return bookName;
+	}
+	public void setBookName(String bookName) {
+		this.bookName = bookName;
+	}
+	public double getBookRate() {
+		return bookRate;
+	}
+	public void setBookRate(double bookRate) {
+		this.bookRate = bookRate;
+	}
+	public String getBookSale() {
+		return bookSale;
+	}
+	public void setBookSale(String bookSale) {
+		this.bookSale = bookSale;
+	}
+	
+
+
 	
 	
-	public String getBooknum() {
-		return booknum;
-	}
-	public void setBooknum(String booknum) {
-		this.booknum = booknum;
-	}
-	public String getBookname() {
-		return bookname;
-	}
-	public void setBookname(String bookname) {
-		this.bookname = bookname;
-	}
-	public double getBookrate() {
-		return bookrate;
-	}
-	public void setBookrate(double bookrate) {
-		this.bookrate = bookrate;
-	}
-	public boolean isBooksale() {
-		return booksale;
-	}
-	public void setBooksale(boolean booksale) {
-		this.booksale = booksale;
-	}
+
 	
 	
 
