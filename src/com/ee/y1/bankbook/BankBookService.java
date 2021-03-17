@@ -57,24 +57,26 @@ private BankBookDAO bankBookDAO;
 	public ActionFoward setWrite(HttpServletRequest request) throws Exception{
 		
 		ActionFoward actionFoward = new ActionFoward();
-		String method = request.getMethod();
-		System.out.println(method);
 		
+		//GET
 		actionFoward.setPath("../WEB-INF/bankbook/bankbookWrite.jsp");	
 		actionFoward.setCheck(true);
 		
-		if(method.toUpperCase().equals("POST")) {
+		if(request.getMethod().toUpperCase().equals("POST")) {
+			
+			System.out.println(request.getParameter("bookName"));
 			
 			BankBookDTO bankBookDTO = new BankBookDTO();
-			bankBookDTO.setBookNumber(Integer.parseInt(request.getParameter("bookNumber")));
+			
 			bankBookDTO.setBookName(request.getParameter("bookName"));
-			bankBookDTO.setBookRate(Long.parseLong(request.getParameter("bookRate")));
+			bankBookDTO.setBookRate(Double.parseDouble(request.getParameter("bookRate")));
 			bankBookDTO.setBookSale(request.getParameter("bookSale"));
 			
 			int result = bankBookDAO.setWrite(bankBookDTO);
 			
-			actionFoward.setPath("../index.do");
 			actionFoward.setCheck(false);
+			actionFoward.setPath("./bankbookList.do");
+	
 			
 		}
 		

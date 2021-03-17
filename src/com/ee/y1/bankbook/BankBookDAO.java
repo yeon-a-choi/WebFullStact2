@@ -128,7 +128,7 @@ public class BankBookDAO {
 			
 			//6. ?처리
 			st.setString(1, bankBookDTO.getBookName());
-			st.setDouble(2,bankBookDTO.getBookRate());
+			st.setDouble(2, bankBookDTO.getBookRate());
 			st.setString(3, bankBookDTO.getBookSale());
 					
 			// 7. 전송 후 처리

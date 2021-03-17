@@ -60,8 +60,7 @@
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="bookName">BookName:</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="bookName"
-							placeholder="Enter bookName" name="bookName">
+						<input type="text" class="form-control" id="bookName" placeholder="Enter bookName" name="bookName">
 					</div>
 				</div>
 				
@@ -74,12 +73,16 @@
 					</div>
 				</div>
 				
+				
 				<div class="form-group">
-					<label class="control-label col-sm-2" for="bookSale">BookSale:</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="bookSale"
-							placeholder="Enter bookSale" name="bookSale">
-					</div>
+					  <label for="bookSale">BookSale:</label>
+					  
+					  <select class="form-control" id="bookSale" name="bookSale">
+					  
+					    <option>Y</option>
+					    <option>N</option>
+					    
+					  </select>
 				</div>
 				
 				<div class="form-group">
